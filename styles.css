@@ -38,3 +38,215 @@ body {
     display: none;
   }
 }
+
+
+.search-page {
+  padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.search-hero {
+  margin-bottom: 18px;
+}
+
+.search-input-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.search-input-bar input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-input-bar button {
+  padding: 12px;
+  border: none;
+  background: #b7b7b7;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.search-location {
+  font-size: 0.95rem;
+}
+
+.search-sort {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-sort select {
+  padding: 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  background: white;
+}
+
+.search-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.search-filters {
+  background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.search-filters h2 {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+}
+
+.search-filter-group {
+  margin-bottom: 20px;
+}
+
+.search-filter-group h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.search-filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.search-price-range {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-price-range input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+}
+
+.search-apply-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #8b2bd3;
+  color: white;
+  cursor: pointer;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.search-card {
+  background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+
+.search-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.search-card h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.search-card p {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.search-price {
+  font-weight: bold;
+}
+
+.search-card button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 20px;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .search-input-bar {
+    flex-direction: row;
+  }
+
+  .search-input-bar input {
+    flex: 1;
+  }
+
+  .search-input-bar button {
+    width: 140px;
+  }
+
+  .search-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-sort {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .search-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .search-filters {
+    width: 260px;
+    flex-shrink: 0;
+  }
+
+  .search-results-grid {
+    flex: 1;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

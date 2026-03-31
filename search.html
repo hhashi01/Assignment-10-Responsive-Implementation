@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="responsive">
+
+  <a class="skip-link" href="#content">Skip to main content</a>
+
+  <header>
+    <div data-include="navigations/header.html"></div>
+  </header>
+
+  <main id="content" class="search-page">
+    <section class="search-hero">
+      <div class="search-input-bar">
+        <input type="text" placeholder="Search items..." />
+        <button type="button">Search</button>
+      </div>
+    </section>
+
+    <section class="search-toolbar">
+      <p class="search-location">Location: Charlotte, NC</p>
+
+      <div class="search-sort">
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+          <option>Relevance</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="search-layout">
+      <aside class="search-filters">
+        <h2>Filters</h2>
+
+        <div class="search-filter-group">
+          <h3>Price Range</h3>
+          <div class="search-price-range">
+            <input type="text" placeholder="Min" />
+            <span>–</span>
+            <input type="text" placeholder="Max" />
+          </div>
+        </div>
+
+        <div class="search-filter-group">
+          <h3>Condition</h3>
+          <label><input type="checkbox" /> New</label>
+          <label><input type="checkbox" /> Like New</label>
+          <label><input type="checkbox" /> Good</label>
+          <label><input type="checkbox" /> Fair</label>
+          <label><input type="checkbox" /> Used</label>
+        </div>
+
+        <div class="search-filter-group">
+          <h3>Posted</h3>
+          <label><input type="radio" name="posted" /> Last 24 hours</label>
+          <label><input type="radio" name="posted" /> Last 7 days</label>
+          <label><input type="radio" name="posted" /> Last 30 days</label>
+          <label><input type="radio" name="posted" /> Anytime</label>
+        </div>
+
+        <button class="search-apply-btn" type="button">Apply Filters</button>
+      </aside>
+
+      <section class="search-results-grid">
+        <article class="search-card">
+          <img src="https://via.placeholder.com/220x120?text=Honda+Accord" alt="2020 Honda Accord" />
+          <h3>2020 Honda Accord</h3>
+          <p class="search-price">$5,000</p>
+          <p>Charlotte, NC</p>
+          <button type="button">Save</button>
+        </article>
+
+        <article class="search-card">
+          <img src="https://via.placeholder.com/220x120?text=BMW+M5" alt="2013 BMW M5" />
+          <h3>2013 BMW M5</h3>
+          <p class="search-price">$18,000</p>
+          <p>Charlotte, NC</p>
+          <button type="button">Save</button>
+        </article>
+
+        <article class="search-card">
+          <img src="https://via.placeholder.com/220x120?text=Chevy+Spark" alt="2020 Chevy Spark" />
+          <h3>2020 Chevy Spark</h3>
+          <p class="search-price">$8,500</p>
+          <p>Charlotte, NC</p>
+          <button type="button">Save</button>
+        </article>
+
+        <article class="search-card">
+          <img src="https://via.placeholder.com/220x120?text=Hyundai+Accent" alt="2014 Hyundai Accent GLS" />
+          <h3>2014 Hyundai Accent GLS</h3>
+          <p class="search-price">$3,500</p>
+          <p>Harrisburg, NC</p>
+          <button type="button">Save</button>
+        </article>
+
+        <article class="search-card">
+          <img src="https://via.placeholder.com/220x120?text=Mazda+3" alt="2019 Mazda 3" />
+          <h3>2019 Mazda 3</h3>
+          <p class="search-price">$6,700</p>
+          <p>Concord, NC</p>
+          <button type="button">Save</button>
+        </article>
+
+        <article class="search-card">
+          <img src="https://via.placeholder.com/220x120?text=VW+Jetta" alt="2022 VW Jetta" />
+          <h3>2022 VW Jetta</h3>
+          <p class="search-price">$9,000</p>
+          <p>Concord, NC</p>
+          <button type="button">Save</button>
+        </article>
+
+        <article class="search-card">
+          <img src="https://via.placeholder.com/220x120?text=Jeep+Wrangler" alt="2015 Jeep Wrangler" />
+          <h3>2015 Jeep Wrangler</h3>
+          <p class="search-price">$9,000</p>
+          <p>Concord, NC</p>
+          <button type="button">Save</button>
+        </article>
+
+        <article class="search-card">
+          <img src="https://via.placeholder.com/220x120?text=Ford+Truck" alt="2015 Ford Truck" />
+          <h3>2015 Ford Truck</h3>
+          <p class="search-price">$12,000</p>
+          <p>Concord, NC</p>
+          <button type="button">Save</button>
+        </article>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
