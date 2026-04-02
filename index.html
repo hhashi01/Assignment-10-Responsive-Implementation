@@ -8,37 +8,34 @@
 </head>
 
 <body>
-<!-- 
-  <header>
-    <div data-include="navigations/header.html"></div>
-  </header>
--->
-  <header class="header">
-    <div class="logo">Craigslist</div>
-    <nav class="nav">
-      <a href="#">Location</a>
-      <a href="#">Account</a>
-      <a href="#">View Mode</a>
-    </nav>
-  </header>
+<nav class="nav">
+  <a class="nav-logo" href="#">Craigslist</a>
+  <div class="nav-right">
+    <div  class=nav-location">Charlotte, NC</div>
+    <div class="nav-menu">
+      <!--Not sure about handling the spacing this way; it makes sense with the Css
+      but could probably be done more elengantly - Zach-->
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </div>
+</nav>
 
-  <main class="content">
-    <h1>Welcome</h1>
-    <p>This is a simple responsive layout.</p>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-toggle"></div>
+    <div class="hero-content">
+      <h1>
+        Find your next everything on
+        <span>Craigslist</span>
+      </h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search items...">
+      <button>Search</button>
+    </div>
+  </section>
 
-    <h2>Search</h2>
-
-    <form action="/search" method="get">
-    <input type="text" id="search-input" name="q" placeholder="Search...">
-    <button type="submit">Search</button>
-
-    <h3>Items You Might Like</h3>
-
-</form>
-
-  </main>
-
-  <!--<script src="scripts/HTMLInclude.js"></script>-->
-  
 </body>
 </html>
