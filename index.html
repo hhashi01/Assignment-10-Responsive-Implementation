@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craiglist Redesign</title>
   <link rel="stylesheet" href="indexstyles.css" />
+  <script src="hamburger_menu.js" defer></script>
 </head>
 
 <body>
 <nav class="nav">
   <a class="nav-logo" href="#">Craigslist</a>
   <div class="nav-right">
-    <div  class=nav-location">Charlotte, NC</div>
-    <div class="nav-menu">
+    <div  class="nav-location">Charlotte, NC</div>
+    <div class="nav-menu" id="hamburger">
       <!--Not sure about handling the spacing this way; it makes sense with the Css
       but could probably be done more elengantly - Zach-->
         <span></span>
@@ -21,6 +22,25 @@
     </div>
   </div>
 </nav>
+
+  <!-- Page overlay (shown when drawer is open) -->
+  <div class="overlay" id="overlay"></div>
+ 
+  <!-- Slide-out drawer -->
+  <aside class="drawer" id="drawer">
+    <button class="drawer-back" id="drawerClose">&#8592;</button>
+    <div class="drawer-header">
+      <h2>Welcome!</h2>
+      <div class="drawer-avatar">&#9786;</div>
+    </div>
+    <div class="drawer-messages">
+      <span class="drawer-count">0</span>
+      <span class="drawer-count-label">Messages</span>
+    </div>
+    <div class="drawer-notification">Notification</div>
+    <div class="drawer-notification">Notification</div>
+    <div class="drawer-notification">Notification</div>
+  </aside>
 
   <section class="hero">
     <div class="hero-overlay"></div>
@@ -45,7 +65,7 @@
       <div class="card">
         <img src="https://m.media-amazon.com/images/I/81QVBFbg2qL._AC_SX679_.jpg">
         <div class="card-label">
-          <h3>Restored '57 Mustang</h3>
+          <h3>Resored '57 Mustang</h3>
           <p>Harrisburg</p>
         </div>
       </div>
