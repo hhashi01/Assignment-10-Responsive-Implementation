@@ -4,39 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craiglist Redesign</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="indexstyles.css" />
+  <script src="hamburger_menu.js" defer></script>
 </head>
 
 <body>
-<!-- 
-  <header>
-    <div data-include="navigations/header.html"></div>
-  </header>
--->
-  <header class="header">
-    <div class="logo">Craigslist</div>
-    <nav class="nav">
-      <a href="#">Location</a>
-      <a href="#">Account</a>
-      <a href="#">View Mode</a>
-    </nav>
-  </header>
+<nav class="nav">
+  <a class="nav-logo" href="#">Craigslist</a>
+  <div class="nav-right">
+    <div  class="nav-location">Charlotte, NC</div>
+    <div class="nav-menu" id="hamburger">
+      <!--Not sure about handling the spacing this way; it makes sense with the Css
+      but could probably be done more elengantly - Zach-->
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </div>
+</nav>
 
-  <main class="content">
-    <h1>Welcome</h1>
-    <p>This is a simple responsive layout.</p>
+  <!-- Page overlay (shown when drawer is open) -->
+  <div class="overlay" id="overlay"></div>
+ 
+  <!-- Slide-out drawer -->
+  <aside class="drawer" id="drawer">
+    <button class="drawer-back" id="drawerClose">&#8592;</button>
+    <div class="drawer-header">
+      <h2>Welcome!</h2>
+      <div class="drawer-avatar">&#9786;</div>
+    </div>
+    <div class="drawer-messages">
+      <span class="drawer-count">0</span>
+      <span class="drawer-count-label">Messages</span>
+    </div>
+    <div class="drawer-notification">Notification</div>
+    <div class="drawer-notification">Notification</div>
+    <div class="drawer-notification">Notification</div>
+  </aside>
 
-    <h2>Search</h2>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-toggle"></div>
+    <div class="hero-content">
+      <h1>
+        Find your next everything on
+        <span>Craigslist</span>
+      </h1>
+    </div>
+<div class="search-bar">
+      <input type="text" placeholder="Search items..." onkeydown="if(event.key==='Enter') window.location.href='search.html'">
+      <button onclick="window.location.href='search.html'">Search</button>
+    </div>
+  </section>
 
-    <form action="/search" method="get">
-    <input type="text" id="search-input" name="q" placeholder="Search...">
-    <button type="submit">Search</button>
+  <section class="listings">
+    <h2>Items You Might Like</h2>
 
-    <h3>Items You Might Like</h3>
+    <div class="cards">
 
-</form>
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/81QVBFbg2qL._AC_SX679_.jpg">
+        <div class="card-label">
+          <h3>Resored '57 Mustang</h3>
+          <p>Harrisburg</p>
+        </div>
+      </div>
 
-  </main>
+    </div>
+          <div class="card">
+        <img src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg" alt="Bicycle">
+        <div class="card-label">
+          <h3>Bicycle</h3>
+          <p>Mint Hill</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://t3.ftcdn.net/jpg/04/90/49/92/360_F_490499266_3eqAX0Gtipn97bc1OQDtxh0IuvtYVNkt.jpg" alt="Potted Snake Plant">
+        <div class="card-label">
+          <h3>Potted Snake Plant</h3>
+          <p>University City</p>
+        </div>
+
+      </div>
+          <div class="dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+
+    </div>
+  </section>
+  </section>
+
 </body>
 </html>
 <a href="search.html">Go to Search Page</a>
