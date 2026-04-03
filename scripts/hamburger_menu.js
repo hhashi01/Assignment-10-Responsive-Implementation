@@ -1,3 +1,9 @@
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = 'styles/hamburger_menu.css';
+document.head.appendChild(link);
+
+
 function initHamburger() {
   const hamburger = document.getElementById('hamburger');
   const drawer = document.getElementById('drawer');
