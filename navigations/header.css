@@ -52,3 +52,10 @@
 .drawer-name-link:hover h3 {
   color: #7c3aed;
 }
+
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
