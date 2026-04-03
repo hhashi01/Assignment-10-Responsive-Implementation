@@ -42,3 +42,13 @@
   background: #222;
   border-radius: 2px;
 }
+
+.drawer-name-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.drawer-name-link:hover h2,
+.drawer-name-link:hover h3 {
+  color: #7c3aed;
+}
