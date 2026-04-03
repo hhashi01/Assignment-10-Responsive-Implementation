@@ -13,15 +13,16 @@
 </head>
 
 <body class="responsive">
-  <!-- Header: Loaded dynamically using HTMLInclude.js.-->
+  <!-- Header: Loaded dynamically using HTMLInclude.js. -->
   <header>
     <div data-include="navigations/header.html"></div>
   </header>
 
-  <!-- Contains three major sections:
+  <!-- Contains the three major sections:
       1. User Profile Information
       2. User Posts (listings)
-      3. User Reviews -->
+      3. User Reviews 
+  -->
   <main id="content" class="content account-page">
 
     <!-- User profile section: This section appears at the top on mobile and left on desktop. -->
@@ -46,7 +47,7 @@
         Love to negotiate a trade and very reasonable!
       </p>
 
-      <!-- Star reviews: Using unicode stars for now. This can be replaced with a dynamic JS rendering. -->
+      <!-- Star reviews: Using unicode stars for now. This can be replaced with a future JS rendering. -->
       <div class="account-rating">
         ★★★★★
       </div>
@@ -54,14 +55,12 @@
     </section>
 
     <!-- User posts section:
-        Uses the same card layout as the rest of the websitefor consistency.
-        This makes the design modular and easy to maintain. -->
+      Uses the same card layout as the rest of the website for consistency. -->
     <section class="account-posts">
 
       <h2>Your Listings</h2>
 
-      <!-- This grid layout reused from search-results-grid.
-        To ensure responsive behavior without new CSS. -->
+      <!-- This grid layout reused from search-results-grid. -->
       <div class="search-results-grid">
 
         <!-- Example Post 1 -->
@@ -103,9 +102,7 @@
       </div>
     </section>
 
-    <!-- User reviews section:
-        Displays reviews in a card layout.
-        Each review is an <article> for semantic clarity. -->
+    <!-- User reviews section: Displays reviews in a card layout style to match the prototype. -->
     <section class="account-reviews">
 
       <h2>Reviews</h2>

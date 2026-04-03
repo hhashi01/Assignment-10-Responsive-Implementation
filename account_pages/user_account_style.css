@@ -1,12 +1,11 @@
 /* 
-   This stylesheet contains ONLY the styles unique to the
-   user account page. It extends from the global styles.css file.
+  This stylesheet contains ONLY the styles unique to the
+  user account page. It extends from the global styles.css file.
 */
 
 
 /* 
-   Page wrapper:
-   Adds spacing and ensures consistent layout across devices.
+  Page wrapper: Adds spacing and ensures consistent layout across devices.
 */
 .account-page {
   display: flex;
@@ -18,8 +17,7 @@
 
 
 /* 
-   User profile section:
-   Appears at the top on mobile and left on desktop.
+  User profile section: Appears at the top on mobile and left on desktop.
 */
 
 .account-profile {
@@ -66,9 +64,9 @@
 
 
 /* 
-   User posts section:
-   Reuses the search card grid layout from styles.css.
-   Only adds spacing and heading styling.
+  User posts section:
+  Reuses the search card grid layout from styles.css.
+  Adds a spacing and heading styling.
 */
 
 .account-posts h2 {
@@ -79,8 +77,7 @@
 
 
 /*
-   Reviews section:
-   Displays user reviews in a card layout.
+  Reviews section: Displays user reviews in a card layout.
 */
 
 .account-reviews {
@@ -145,9 +142,9 @@
 }
 
 /*
-   Responsive behavior:
-   On desktop: profile on the left, posts + reviews on the right.
-   On mobile: everything stacks vertically.
+  Responsive behavior:
+  On desktop: profile on the left, posts + reviews on the right.
+  On mobile: everything stacks vertically.
 */
 
 @media (min-width: 900px) {
@@ -171,8 +168,7 @@
 }
 
 /*
-   Scrollable posts section:
-   Adds a fixed height and vertical scrollbar to the user's posts.
+  Scrollable posts section: Adds a fixed height and vertical scrollbar to the user's posts.
 */
 
 .account-posts {
@@ -186,8 +182,7 @@
 }
 
 /*
-   Scrollable review section:
-   Keeps reviews contained with a scrollbar.
+  Scrollable review section: Keeps reviews contained with a scrollbar.
 */
 
 .account-reviews {
@@ -201,8 +196,8 @@
 }
 
 /*
-   Enhanced search card styling for user listings:
-   Adds a clean border, shadow, and spacing to each user listing.
+  Enhanced search card styling for user listings:
+  Adds a clean border, shadow, and spacing to each user listing.
 */
 
 .search-card {
