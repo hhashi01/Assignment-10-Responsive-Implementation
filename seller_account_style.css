@@ -77,21 +77,9 @@
 }
 
 /* Horizontal scroll container */
-.review-scroll {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
+.review-scroll::-webkit-scrollbar { display: none; }
+.review-scroll { scrollbar-width: none; }
 
-.review-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-
-.review-scroll::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 10px;
-}
 
 /* Review card */
 .review-card {

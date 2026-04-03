@@ -89,12 +89,6 @@
   font-size: 1.4rem;
 }
 
-/* Review list container */
-.review-list {
-  display: grid;
-  gap: 16px;
-}
-
 /* Individual review card */
 .review-card {
   background: #ffffff;
@@ -121,15 +115,7 @@
   gap: 16px;
   overflow-x: auto;
   padding-bottom: 10px;
-}
-
-.review-list::-webkit-scrollbar {
-  height: 8px;
-}
-
-.review-list::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 10px;
+  scrollbar-width: none;
 }
 
 /* Review card stays the same, but now works horizontally */
@@ -214,3 +200,7 @@
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
+
+/* Made by Claude and re-worked */
+.review-list::-webkit-scrollbar { display: none; }
+.review-list { scrollbar-width: none; }

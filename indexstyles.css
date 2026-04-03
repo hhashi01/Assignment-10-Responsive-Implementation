@@ -32,7 +32,6 @@ body {
   position: relative;
   text-align: center;
   z-index: 1;
-  backdrop-filter: blur(2px);
   padding: 2px 6px;
   border-radius: 1px;
 }
@@ -243,3 +242,7 @@ body {
   object-fit: cover;
   display: block;
 }
+
+/* Made by Claude and re-worked */
+.cards::-webkit-scrollbar { display: none; }
+.cards { scrollbar-width: none; }
