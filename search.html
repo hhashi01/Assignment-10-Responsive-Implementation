@@ -13,18 +13,19 @@
 
     <!-- Links your CSS file for styling -->
     <link rel="stylesheet" href="styles.css" />
+
+    <script src="header_footer.js" defer></script>
 </head>
 
 <body class="responsive">
+
+    
 
     <!-- Skip link for accessibility (helps keyboard users jump to content) -->
     <a class="skip-link" href="#content">Skip to main content</a>
 
     <!-- HEADER SECTION -->
-    <header>
-        <!-- This loads your header (like navigation bar) from another file -->
-        <div data-include="navigations/header.html"></div>
-    </header>
+    <div id="nav-placeholder"></div>
 
     <!-- MAIN CONTENT OF PAGE -->
     <main id="content" class="search-page">
@@ -192,16 +193,9 @@
         </article>
       </section>
     </section>
-  </main>
-  <!-- <script src="scripts/HTMLInclude.js"></script>
 
-     WAIT for include to finish, THEN load hamburger script 
-    <script>
-    window.addEventListener('load', () => {
-    const script = document.createElement('script');
-    script.src = "scripts/hamburger_menu.js";
-    document.body.appendChild(script);
-    });
-    </script> -->
+<div id="footer-placeholder"></div>
+
+  </main>
 </body>
 </html>

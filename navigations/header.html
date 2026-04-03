@@ -1,34 +1,63 @@
-<header class="header">
-  <nav class="nav">
-    <a class="nav-logo" href="#">Craiglist</a>
-    <div class="nav-right">
-      <div class="nav-location">Charlotte, NC</div>
-      <div class="nav-menu" id="hamburger">
+<nav class="nav">
+  <a class="nav-logo" href="#">Craigslist</a>
+  <div class="nav-right">
+    <div  class="nav-location">Charlotte, NC</div>
+    <div class="nav-menu" id="hamburger">
+      <!--Not sure about handling the spacing this way; it makes sense with the Css
+      but could probably be done more elengantly - Zach-->
         <span></span>
         <span></span>
         <span></span>
-      </div>
     </div>
-  </nav>
-</header>
- 
-<!-- Page overlay (shown when drawer is open) -->
-<div class="overlay" id="overlay"></div>
+  </div>
+</nav>
 
-<!-- Slide-out drawer -->
-<aside class="drawer" id="drawer">
+  <!-- Page overlay (shown when drawer is open) -->
+  <div class="overlay" id="overlay"></div>
+ 
+<section class="drawer" id="drawer">
+
   <button class="drawer-back" id="drawerClose">&#8592;</button>
+
+  <!-- Profile -->
   <div class="drawer-header">
-    <h2>Welcome!</h2>
+    <div>
+      <p class="drawer-greeting">Welcome back,</p>
+      <h2>First</h2>
+      <h3>Last</h3>
+    </div>
     <div class="drawer-avatar">&#9786;</div>
   </div>
-  <div class="drawer-messages">
-    <span class="drawer-count">0</span>
-    <span class="drawer-count-label">Messages</span>
+
+  <!-- Post Button -->
+  <a href="#" class="drawer-post">+ Make a Post</a>
+
+  <!-- Stats Row -->
+  <div class="drawer-stats">
+    <div class="drawer-stat">
+      <span class="drawer-stat-num">0</span>
+      <span class="drawer-stat-label">Messages</span>
+    </div>
+    <div class="drawer-stat">
+      <span class="drawer-stat-num">3</span>
+      <span class="drawer-stat-label">Listings</span>
+    </div>
+    <div class="drawer-stat">
+      <span class="drawer-stat-num">7</span>
+      <span class="drawer-stat-label">Saved</span>
+    </div>
   </div>
+
+  <!-- Nav Links -->
   <nav class="drawer-nav">
-    <a href="account_pages/user_account.html">Account</a>
-    <a href="index.html">Home</a>
-    <a href="notifications.html">Notifications</a>
+    <a href="#" class="drawer-link">Messages</a>
+    <a href="#" class="drawer-link">My Listings</a>
+    <a href="#" class="drawer-link">Saved Items</a>
+    <a href="#" class="drawer-link">Search History</a>
+    <a href="#" class="drawer-link">Settings</a>
   </nav>
-</aside>
+
+  <!-- Sign Out -->
+  <a href="#" class="drawer-signout">Sign Out</a>
+
+</section>
