@@ -1,130 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search</title>
-  <link rel="stylesheet" href="styles.css" />
+    <!-- This tells the browser what kind of text we are using -->
+    <meta charset="UTF-8" />
+
+    <!-- Makes the page responsive on phones and different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title that shows in the browser tab -->
+    <title>Search</title>
+
+    <!-- Links your CSS file for styling -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="responsive">
 
-  <a class="skip-link" href="#content">Skip to main content</a>
+    <!-- Skip link for accessibility (helps keyboard users jump to content) -->
+    <a class="skip-link" href="#content">Skip to main content</a>
 
-  <header>
-    <div data-include="navigations/header.html"></div>
-  </header>
+    <!-- HEADER SECTION -->
+    <header>
+        <!-- This loads your header (like navigation bar) from another file -->
+        <div data-include="navigations/header.html"></div>
+    </header>
 
-  <main id="content" class="search-page">
-    <section class="search-hero">
-      <div class="search-input-bar">
-        <input type="text" placeholder="Search items..." />
-        <button type="button">Search</button>
-      </div>
-    </section>
+    <!-- MAIN CONTENT OF PAGE -->
+    <main id="content" class="search-page">
 
-    <section class="search-toolbar">
-      <p class="search-location">Location: Charlotte, NC</p>
+        <!-- SEARCH BAR SECTION -->
+        <section class="search-hero">
+            <div class="search-input-bar">
+                <!-- Input where user types what they want to search -->
+                <input type="text" placeholder="Search items..." />
 
-      <div class="search-sort">
-        <label for="sort">Sort by:</label>
-        <select id="sort">
-          <option>Relevance</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
-          <option>Newest</option>
-        </select>
-      </div>
-    </section>
+                <!-- Button to trigger search -->
+                <button type="button">Search</button>
+            </div>
+        </section>
 
-    <section class="search-layout">
-      <aside class="search-filters">
-        <h2>Filters</h2>
+        <!-- TOOLBAR (location + sorting) -->
+        <section class="search-toolbar">
 
-        <div class="search-filter-group">
-          <h3>Price Range</h3>
-          <div class="search-price-range">
-            <input type="text" placeholder="Min" />
-            <span>–</span>
-            <input type="text" placeholder="Max" />
-          </div>
-        </div>
+            <!-- Shows current location -->
+            <p class="search-location">Location: Charlotte, NC</p>
 
-        <div class="search-filter-group">
-          <h3>Condition</h3>
-          <label><input type="checkbox" /> New</label>
-          <label><input type="checkbox" /> Like New</label>
-          <label><input type="checkbox" /> Good</label>
-          <label><input type="checkbox" /> Fair</label>
-          <label><input type="checkbox" /> Used</label>
-        </div>
+            <!-- SORT DROPDOWN -->
+            <div class="search-sort">
+                <label for="sort">Sort by:</label>
 
-        <div class="search-filter-group">
-          <h3>Posted</h3>
-          <label><input type="radio" name="posted" /> Last 24 hours</label>
-          <label><input type="radio" name="posted" /> Last 7 days</label>
-          <label><input type="radio" name="posted" /> Last 30 days</label>
-          <label><input type="radio" name="posted" /> Anytime</label>
-        </div>
+                <!-- Dropdown menu -->
+                <select id="sort">
+                    <option>Relevance</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest</option>
+                </select>
+            </div>
+        </section>
 
-        <button class="search-apply-btn" type="button">Apply Filters</button>
-      </aside>
+        <!-- MAIN LAYOUT (filters on left + results on right) -->
+        <section class="search-layout">
 
-      <section class="search-results-grid">
-        <article class="search-card">
-          <img src="images/2020_honda_accord-removebg-preview.png" alt="2020 Honda Accord" />
-          <h3>2020 Honda Accord</h3>
-          <p class="search-price">$5,000</p>
-          <p>Charlotte, NC</p>
-          <button type="button">Save</button>
-        </article>
+            <!-- SIDEBAR FILTERS -->
+            <aside class="search-filters">
+                <h2>Filters</h2>
 
-        <article class="search-card">
-          <img src="images/bmw.png" alt="2013 BMW M5" />
-          <h3>2013 BMW M5</h3>
-          <p class="search-price">$18,000</p>
-          <p>Charlotte, NC</p>
-          <button type="button">Save</button>
-        </article>
+                <!-- PRICE FILTER -->
+                <div class="search-filter-group">
+                    <h3>Price Range</h3>
 
-        <article class="search-card">
-          <img src="images/chevy_2020_spark-removebg-preview.png" alt="2020 Chevy Spark" />
-          <h3>2020 Chevy Spark</h3>
-          <p class="search-price">$8,500</p>
-          <p>Charlotte, NC</p>
-          <button type="button">Save</button>
-        </article>
+                    <div class="search-price-range">
+                        <!-- Minimum price input -->
+                        <input type="text" placeholder="Min" />
 
-        <article class="search-card">
-          <img src="images/hyundai_accent_gls_2014-removebg-preview.png" alt="2014 Hyundai Accent GLS" />
-          <h3>2014 Hyundai Accent GLS</h3>
-          <p class="search-price">$3,500</p>
-          <p>Harrisburg, NC</p>
-          <button type="button">Save</button>
-        </article>
+                        <!-- Just a dash between inputs -->
+                        <span>—</span>
 
-        <article class="search-card">
-          <img src="images/2019_mazda_mazda3-removebg-preview.png"2019 Mazda 3" />
-          <h3>2019 Mazda 3</h3>
-          <p class="search-price">$6,700</p>
-          <p>Concord, NC</p>
-          <button type="button">Save</button>
-        </article>
+                        <!-- Maximum price input -->
+                        <input type="text" placeholder="Max" />
+                    </div>
+                </div>
 
-        <article class="search-card">
-          <img src="images/2022_vw_jetta-removebg-preview.png" alt="2022 VW Jetta" />
-          <h3>2022 VW Jetta</h3>
-          <p class="search-price">$9,000</p>
-          <p>Concord, NC</p>
-          <button type="button">Save</button>
-        </article>
+                <!-- CONDITION FILTER (checkboxes = multiple allowed) -->
+                <div class="search-filter-group">
+                    <h3>Condition</h3>
 
-        <article class="search-card">
-          <img src="images/2015_jeep_cherokee_-removebg-preview.png" alt="2015 Jeep Wrangler" />
-          <h3>2015 Jeep Wrangler</h3>
-          <p class="search-price">$9,000</p>
-          <p>Concord, NC</p>
-          <button type="button">Save</button>
-        </article>
+                    <label><input type="checkbox" /> New</label>
+                    <label><input type="checkbox" /> Like New</label>
+                    <label><input type="checkbox" /> Good</label>
+                    <label><input type="checkbox" /> Fair</label>
+                    <label><input type="checkbox" /> Used</label>
+                </div>
+
+                <!-- DATE FILTER (radio = only one choice allowed) -->
+                <div class="search-filter-group">
+                    <h3>Posted</h3>
+
+                    <label><input type="radio" name="posted" /> Last 24 hours</label>
+                    <label><input type="radio" name="posted" /> Last 7 days</label>
+                    <label><input type="radio" name="posted" /> Last 30 days</label>
+                    <label><input type="radio" name="posted" /> Anytime</label>
+                </div>
+
+                <!-- BUTTON TO APPLY FILTERS -->
+                <button class="search-apply-btn" type="button">Apply Filters</button>
+            </aside>
+
+            <!-- SEARCH RESULTS GRID -->
+            <section class="search-results-grid">
+
+                <!-- CARD 1 -->
+                <article class="search-card">
+                    <!-- Image of item -->
+                    <img src="images/2020_honda_accord-removebg-preview.png" alt="2020 Honda Accord" />
+
+                    <!-- Title -->
+                    <h3>2020 Honda Accord</h3>
+
+                    <!-- Price -->
+                    <p class="search-price">$5,000</p>
+
+                    <!-- Location -->
+                    <p>Charlotte, NC</p>
+
+                    <!-- Save button -->
+                    <button type="button">Save</button>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="search-card">
+                    <img src="images/bmw.png" alt="2013 BMW M5" />
+                    <h3>2013 BMW M5</h3>
+                    <p class="search-price">$18,000</p>
+                    <p>Charlotte, NC</p>
+                    <button type="button">Save</button>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="search-card">
+                    <img src="images/chevy_2020_spark-removebg-preview.png" alt="2020 Chevy Spark" />
+                    <h3>2020 Chevy Spark</h3>
+                    <p class="search-price">$8,500</p>
+                    <p>Charlotte, NC</p>
+                    <button type="button">Save</button>
+                </article>
+
+                <!-- CARD 4 -->
+                <article class="search-card">
+                    <img src="images/hyundai_accent_gls_2014-removebg-preview.png" alt="2014 Hyundai Accent" />
+                    <h3>2014 Hyundai Accent GLS</h3>
+                    <p class="search-price">$3,500</p>
+                    <p>Harrisburg, NC</p>
+                    <button type="button">Save</button>
+                </article>
+
+                <!-- CARD 5 -->
+                <article class="search-card">
+                    <img src="images/2019_mazda_mazda3-removebg-preview.png" alt="2019 Mazda 3" />
+                    <h3>2019 Mazda 3</h3>
+                    <p class="search-price">$6,700</p>
+                    <p>Concord, NC</p>
+                    <button type="button">Save</button>
+                </article>
+
+                <!-- CARD 6 -->
+                <article class="search-card">
+                    <img src="images/2022_vw_jetta-removebg-preview.png" alt="2022 VW Jetta" />
+                    <h3>2022 VW Jetta</h3>
+                    <p class="search-price">$9,000</p>
+                    <p>Concord, NC</p>
+                    <button type="button">Save</button>
+                </article>
+
+                <!-- CARD 7 -->
+                <article class="search-card">
+                    <img src="images/2015_jeep_cherokee-removebg-preview.png" alt="2015 Jeep Wrangler" />
+                    <h3>2015 Jeep Wrangler</h3>
+                    <p class="search-price">$9,000</p>
+                    <p>Concord, NC</p>
+                    <button type="button">Save</button>
+                </article>
 
         <article class="search-card">
           <img src="images/2025_ford_ranger-removebg-preview.png" alt="2015 Ford Truck" />
@@ -136,15 +193,5 @@
       </section>
     </section>
   </main>
-  <script src="scripts/HTMLInclude.js"></script>
-
-    <!-- WAIT for include to finish, THEN load hamburger script -->
-    <script>
-    window.addEventListener('load', () => {
-    const script = document.createElement('script');
-    script.src = "scripts/hamburger_menu.js";
-    document.body.appendChild(script);
-    });
-    </script>
 </body>
 </html>
