@@ -11,6 +11,7 @@ fetch('navigations/header.html')
     document.getElementById('nav-placeholder').innerHTML = html;
     loadStyle('navigations/header.css');
     initHamburger();
+    initDarkModeToggle(); // wire up toggles after nav HTML exists
   });
 
 fetch('navigations/footer.html')

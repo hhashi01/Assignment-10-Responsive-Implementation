@@ -1,4 +1,45 @@
 /* =========================
+   VARIABLES
+========================= */
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text: #222222;
+  --text-muted: #555555;
+  --text-light: #888888;
+  --border: #dddddd;
+  --border-mid: #bdbdbd;
+  --border-light: #cfcfcf;
+  --card-bg: #ffffff;
+  --input-bg: #f5f5f5;
+  --drawer-bg: #ffffff;
+  --suggestion-hover: #f3f0ff;
+  --nav-menu: #222222;
+  --filter-hover: #f5f3ff;
+  --save-btn: #f8f8f8;
+  --notification-border: #eeeeee;
+}
+
+html.dark {
+  --bg: #111111;
+  --bg-secondary: #1a1a1a;
+  --text: #e8e8e8;
+  --text-muted: #999999;
+  --text-light: #666666;
+  --border: #2e2e2e;
+  --border-mid: #383838;
+  --border-light: #2a2a2a;
+  --card-bg: #1e1e1e;
+  --input-bg: #252525;
+  --drawer-bg: #1e1e1e;
+  --suggestion-hover: #2d1f4e;
+  --nav-menu: #e8e8e8;
+  --filter-hover: #2d1f4e;
+  --save-btn: #252525;
+  --notification-border: #2e2e2e;
+}
+
+/* =========================
    RESET
 ========================= */
 * {
@@ -13,6 +54,9 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* =========================
@@ -37,7 +81,8 @@ body {
    NAV
 ========================= */
 .header {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
   position: relative;
 }
 
@@ -63,10 +108,11 @@ body {
 
 .nav-location {
   padding: 8px 14px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   border-radius: 6px;
   font-size: 14px;
-  background: #f5f5f5;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 .nav-menu {
@@ -80,8 +126,9 @@ body {
   display: block;
   width: 24px;
   height: 3px;
-  background: #222;
+  background: var(--nav-menu);
   border-radius: 2px;
+  transition: background 0.3s ease;
 }
 
 /* =========================
@@ -105,11 +152,12 @@ body {
   right: -280px;
   width: 280px;
   height: 100%;
-  background: white;
+  background: var(--drawer-bg);
+  color: var(--text);
   z-index: 400;
   padding: 20px;
   transition: right 0.3s ease;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
 }
 
 .drawer.active {
@@ -123,6 +171,7 @@ body {
   cursor: pointer;
   margin-bottom: 20px;
   padding: 4px;
+  color: var(--text);
 }
 
 .drawer-header {
@@ -151,11 +200,11 @@ body {
 
 .drawer-notification {
   padding: 12px;
-  border: 1px solid #eee;
+  border: 1px solid var(--notification-border);
   border-radius: 8px;
   margin-bottom: 10px;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-muted);
 }
 
 .drawer-nav {
@@ -169,12 +218,12 @@ body {
   padding: 12px;
   border-radius: 8px;
   text-decoration: none;
-  color: #333;
+  color: var(--text);
   font-size: 0.95rem;
 }
 
 .drawer-nav a:hover {
-  background: #f5f5f5;
+  background: var(--input-bg);
 }
 
 /* =========================
@@ -189,7 +238,7 @@ body {
 ========================= */
 .search-page {
   padding: 20px;
-  background: #f5f5f5;
+  background: var(--bg-secondary);
   min-height: 100vh;
 }
 
@@ -198,11 +247,12 @@ body {
 }
 
 .search-input-bar {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: white;
-  border: 1px solid #cfcfcf;
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
   border-radius: 10px;
   padding: 12px;
 }
@@ -210,26 +260,40 @@ body {
 .search-input-bar input {
   width: 100%;
   padding: 12px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid var(--border-mid);
   border-radius: 8px;
   font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text);
 }
 
 .search-input-bar button {
   padding: 12px;
   border: none;
-  background: #b7b7b7;
+  background: #7c3aed;
   color: white;
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.15s ease, transform 0.08s ease, box-shadow 0.15s ease;
+}
+
+.search-input-bar button:hover {
+  background: #6d28d9;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+}
+
+.search-input-bar button:active {
+  transform: scale(0.95);
+  background: #5b21b6;
+  box-shadow: none;
 }
 
 .search-toolbar {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: white;
-  border: 1px solid #d9d9d9;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px;
   margin-bottom: 18px;
@@ -237,6 +301,7 @@ body {
 
 .search-location {
   font-size: 0.95rem;
+  color: var(--text);
 }
 
 .search-sort {
@@ -247,9 +312,10 @@ body {
 
 .search-sort select {
   padding: 10px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid var(--border-mid);
   border-radius: 8px;
-  background: white;
+  background: var(--card-bg);
+  color: var(--text);
 }
 
 .search-no-results {
@@ -257,11 +323,7 @@ body {
   text-align: center;
   padding: 48px 20px;
   font-size: 16px;
-  color: #888;
-}
-
-.search-input-bar {
-  position: relative;
+  color: var(--text-light);
 }
 
 .search-suggestions {
@@ -269,9 +331,9 @@ body {
   top: calc(100% + 6px);
   left: 0;
   right: 0;
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   list-style: none;
   margin: 0;
   padding: 6px 0;
@@ -286,12 +348,12 @@ body {
   padding: 10px 18px;
   font-size: 14px;
   cursor: pointer;
-  color: #333;
+  color: var(--text);
   transition: background 0.15s;
 }
 
 .search-suggestions li:hover {
-  background: #f3f0ff;
+  background: var(--suggestion-hover);
   color: #7c3aed;
 }
 
@@ -301,29 +363,13 @@ body {
 }
 
 .suggestion-no-results {
-  color: #999 !important;
+  color: var(--text-muted) !important;
   cursor: default !important;
   font-style: italic;
 }
 
 .suggestion-no-results:hover {
   background: none !important;
-}
-
-.search-input-bar button {
-  transition: background 0.15s ease, transform 0.08s ease, box-shadow 0.15s ease;
-  cursor: pointer;
-}
-
-.search-input-bar button:hover {
-  background: #6d28d9;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
-}
-
-.search-input-bar button:active {
-  transform: scale(0.95);
-  background: #5b21b6;
-  box-shadow: none;
 }
 
 /* =========================
@@ -336,8 +382,8 @@ body {
 }
 
 .search-filters {
-  background: white;
-  border: 1px solid #d9d9d9;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 18px;
 }
@@ -349,12 +395,14 @@ body {
 .search-filter-group h3 {
   font-size: 1rem;
   margin-bottom: 10px;
+  color: var(--text);
 }
 
 .search-filter-group label {
   display: block;
   margin-bottom: 8px;
   font-size: 0.95rem;
+  color: var(--text);
 }
 
 .search-price-range {
@@ -366,8 +414,10 @@ body {
 .search-price-range input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid var(--border-mid);
   border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text);
 }
 
 .search-apply-btn {
@@ -383,17 +433,18 @@ body {
 .filters-toggle {
   width: 100%;
   background: none;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 10px 14px;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   text-align: left;
+  color: var(--text);
 }
 
 .filters-toggle:hover {
-  background: #f5f3ff;
+  background: var(--filter-hover);
   color: #7c3aed;
 }
 
@@ -416,8 +467,8 @@ body {
 }
 
 .search-card {
-  background: white;
-  border: 1px solid #d9d9d9;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px;
   text-align: center;
@@ -432,24 +483,28 @@ body {
 .search-card h3 {
   font-size: 1rem;
   margin-bottom: 6px;
+  color: var(--text);
 }
 
 .search-card p {
   font-size: 0.95rem;
   margin-bottom: 4px;
+  color: var(--text-muted);
 }
 
 .search-price {
   font-weight: bold;
+  color: var(--text) !important;
 }
 
 .search-card button {
   margin-top: 10px;
   width: 100%;
   padding: 10px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid var(--border-mid);
   border-radius: 20px;
-  background: #f8f8f8;
+  background: var(--save-btn);
+  color: var(--text);
   cursor: pointer;
 }
 

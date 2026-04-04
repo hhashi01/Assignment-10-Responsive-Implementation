@@ -9,6 +9,9 @@
     <a href="#" class="nav-btn nav-icon" title="Settings">⚙</a>
     <a href="user_account.html" class="nav-avatar">&#9786; Your Account</a>
 
+    <!-- Dark mode toggle (desktop only) -->
+    <button class="nav-dark-toggle" id="darkToggle" title="Toggle dark mode"></button>
+
     <!-- Mobile only hamburger -->
     <div class="nav-menu" id="hamburger">
       <span></span>
@@ -18,14 +21,12 @@
   </div>
 </nav>
 
-  <!-- Page overlay (shown when drawer is open) -->
-  <div class="overlay" id="overlay"></div>
- 
+<div class="overlay" id="overlay"></div>
+
 <section class="drawer" id="drawer">
 
   <button class="drawer-back" id="drawerClose">&#8592;</button>
 
-<!-- Profile -->
   <div class="drawer-header">
     <div>
       <p class="drawer-greeting">Welcome back,</p>
@@ -35,10 +36,8 @@
     <a href="user_account.html" class="drawer-avatar">&#9786;</a>
   </div>
 
-  <!-- Post Button -->
   <a href="#" class="drawer-post">+ Make a Post</a>
 
-  <!-- Stats Row -->
   <div class="drawer-stats">
     <div class="drawer-stat">
       <span class="drawer-stat-num">0</span>
@@ -54,16 +53,20 @@
     </div>
   </div>
 
-  <!-- Nav Links -->
   <nav class="drawer-nav">
     <a href="#" class="drawer-link">Messages</a>
     <a href="user_account.html" class="drawer-link">My Listings</a>
     <a href="#" class="drawer-link">Saved Items</a>
     <a href="#" class="drawer-link">Search History</a>
     <a href="#" class="drawer-link">Settings</a>
+
+    <!-- Dark mode toggle (mobile only, inside drawer) -->
+    <div class="drawer-dark-row">
+      <span>Dark Mode</span>
+      <button class="nav-dark-toggle" id="darkToggleDrawer"></button>
+    </div>
   </nav>
 
-  <!-- Sign Out -->
   <a href="#" class="drawer-signout">Sign Out</a>
 
 </section>
