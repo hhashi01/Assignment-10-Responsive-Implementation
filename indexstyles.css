@@ -1,3 +1,6 @@
+/* =========================
+   RESET & BASE
+========================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +12,10 @@ body {
   background: #fff;
   color: #222;
 }
-/* ── Hero ── */
+
+/* =========================
+   HERO
+========================= */
 .hero {
   position: relative;
   height: 320px;
@@ -18,14 +24,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 0 0 15px 15px;
   gap: 20px;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
@@ -72,11 +78,9 @@ body {
   border-radius: 50%;
 }
 
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.35);
-}
-
-/* ── Search Bar ── */
+/* =========================
+   SEARCH BAR
+========================= */
 .search-bar {
   position: relative;
   z-index: 1;
@@ -106,7 +110,9 @@ body {
   cursor: pointer;
 }
 
-/* ── Listings Section ── */
+/* =========================
+   LISTINGS & CAROUSEL
+========================= */
 .listings {
   padding: 24px 20px;
 }
@@ -117,15 +123,18 @@ body {
   margin-bottom: 16px;
 }
 
-/* ── Carousel ── */
 .cards {
   display: flex;
-  flex-direction: row;
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.cards::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
@@ -166,7 +175,9 @@ body {
   color: #555;
 }
 
-/* ── Dots ── */
+/* =========================
+   DOTS
+========================= */
 .dots {
   display: flex;
   justify-content: center;
@@ -184,8 +195,10 @@ body {
 .dot.active {
   background: #222;
 }
- 
-/* ── About ── */
+
+/* =========================
+   ABOUT
+========================= */
 .about {
   display: flex;
   gap: 20px;
@@ -243,10 +256,9 @@ body {
   display: block;
 }
 
-/* Made by Claude and re-worked */
-.cards::-webkit-scrollbar { display: none; }
-.cards { scrollbar-width: none; }
-
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 600px) {
   .about {
     flex-direction: column;

@@ -1,4 +1,10 @@
-/* ── Top Nav ── */
+/*
+  Shared nav styles.
+*/
+
+/* =========================
+   NAV
+========================= */
 .nav {
   display: flex;
   align-items: center;
@@ -43,76 +49,20 @@
   border-radius: 2px;
 }
 
-.drawer-name-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.drawer-name-link:hover h2,
-.drawer-name-link:hover h3 {
-  color: #7c3aed;
-}
-
-@media (max-width: 600px) {
-  .footer-links {
-    flex-direction: column;
-    gap: 24px;
-  }
-}
-
-@media (min-width: 600px) {
-  .nav-menu {
-    display: none;
-  }
-}
-
-.nav-avatar {
-  font-size: 14px;
-  text-decoration: none;
-  color: #222;
-  display: none;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: #f5f5f5;
-}
-
-.nav-avatar:hover {
-  background: #f5f3ff;
-  border-color: #7c3aed;
-  color: #7c3aed;
-}
-
-@media (min-width: 600px) {
-  .nav-avatar {
-    display: flex;
-  }
-
-  .nav-menu {
-    display: none;
-  }
-}
-
-@media (max-width: 599px) {
-  .nav-location {
-    display: none;
-  }
-}
-
-/* Hidden on mobile, shown on desktop */
+/* =========================
+   NAV BUTTONS (desktop)
+========================= */
 .nav-btn {
   display: none;
-  text-decoration: none;
-  color: #222;
+  align-items: center;
+  gap: 6px;
   padding: 8px 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   background: #f5f5f5;
   font-size: 14px;
-  align-items: center;
-  gap: 6px;
+  color: #222;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -134,15 +84,15 @@
   color: #fff;
 }
 
+.nav-post:hover .nav-plus {
+  color: #fff;
+}
+
 .nav-plus {
-  color: #7c3aed;
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
-}
-
-.nav-post:hover .nav-plus {
-  color: #fff;
+  color: #7c3aed;
 }
 
 .nav-icon {
@@ -150,12 +100,67 @@
   font-size: 14px;
 }
 
+/* =========================
+   NAV AVATAR (desktop)
+========================= */
+.nav-avatar {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f5f5f5;
+  font-size: 14px;
+  color: #222;
+  text-decoration: none;
+}
+
+.nav-avatar:hover {
+  background: #f5f3ff;
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+/* =========================
+   DRAWER NAME LINK
+========================= */
+.drawer-name-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.drawer-name-link:hover h2,
+.drawer-name-link:hover h3 {
+  color: #7c3aed;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (min-width: 600px) {
+  .nav-menu {
+    display: none;
+  }
+
   .nav-btn {
     display: flex;
   }
 
-  .nav-menu {
+  .nav-avatar {
+    display: flex;
+  }
+}
+
+@media (max-width: 599px) {
+  .nav-location {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 24px;
   }
 }

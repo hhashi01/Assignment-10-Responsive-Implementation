@@ -1,22 +1,26 @@
-/* BASIC RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BASE STYLES */
+/* =========================
+   BASE
+========================= */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
 }
 
 /* =========================
-   SKIP LINK (ACCESSIBILITY)
+   ACCESSIBILITY
 ========================= */
 .skip-link {
   position: absolute;
-  top: -40px; /* hidden off screen */
+  top: -40px;
   left: 0;
   background: #000;
   color: #fff;
@@ -26,10 +30,12 @@ body {
 }
 
 .skip-link:focus {
-  top: 0; /* shows when tabbed to */
+  top: 0;
 }
 
-/* HEADER */
+/* =========================
+   NAV
+========================= */
 .header {
   border-bottom: 1px solid #ddd;
   position: relative;
@@ -78,7 +84,9 @@ body {
   border-radius: 2px;
 }
 
-/* OVERLAY - darkens page when drawer is open */
+/* =========================
+   OVERLAY & DRAWER
+========================= */
 .overlay {
   display: none;
   position: fixed;
@@ -91,11 +99,10 @@ body {
   display: block;
 }
 
-/* SLIDE-OUT DRAWER */
 .drawer {
   position: fixed;
   top: 0;
-  right: -280px;   /* hidden off screen */
+  right: -280px;
   width: 280px;
   height: 100%;
   background: white;
@@ -106,7 +113,7 @@ body {
 }
 
 .drawer.active {
-  right: 0;     /* slides in */
+  right: 0;
 }
 
 .drawer-back {
@@ -170,11 +177,16 @@ body {
   background: #f5f5f5;
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT
+========================= */
 .content {
   padding: 24px;
 }
 
+/* =========================
+   SEARCH PAGE
+========================= */
 .search-page {
   padding: 20px;
   background: #f5f5f5;
@@ -240,6 +252,9 @@ body {
   background: white;
 }
 
+/* =========================
+   SEARCH LAYOUT & FILTERS
+========================= */
 .search-layout {
   display: flex;
   flex-direction: column;
@@ -291,6 +306,35 @@ body {
   cursor: pointer;
 }
 
+.filters-toggle {
+  width: 100%;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+}
+
+.filters-toggle:hover {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.filters-body {
+  display: none;
+  margin-top: 12px;
+}
+
+.filters-body.open {
+  display: block;
+}
+
+/* =========================
+   SEARCH RESULTS
+========================= */
 .search-results-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -335,6 +379,24 @@ body {
   cursor: pointer;
 }
 
+/* =========================
+   SELLER LINK
+========================= */
+.seller-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.seller-link:hover .seller-name {
+  color: #7c3aed;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (min-width: 768px) {
   .search-input-bar {
     flex-direction: row;
@@ -379,43 +441,4 @@ body {
     flex: 1;
     grid-template-columns: repeat(4, 1fr);
   }
-}
-
-.seller-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
-}
-
-.seller-link:hover .seller-name {
-  color: #7c3aed;
-}
-
-/* ── Filters Toggle ── */
-.filters-toggle {
-  width: 100%;
-  background: none;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: left;
-}
-
-.filters-toggle:hover {
-  background: #f5f3ff;
-  color: #7c3aed;
-}
-
-.filters-body {
-  display: none;
-  margin-top: 12px;
-}
-
-.filters-body.open {
-  display: block;
 }

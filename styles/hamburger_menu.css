@@ -1,4 +1,10 @@
-/* ── Overlay ── */
+/*
+  Hamburger menu: overlay and drawer styles.
+*/
+
+/* =========================
+   OVERLAY
+========================= */
 .overlay {
   display: none;
   position: fixed;
@@ -6,12 +12,14 @@
   background: rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
- 
+
 .overlay.active {
   display: block;
 }
- 
-/* ── Drawer ── */
+
+/* =========================
+   DRAWER
+========================= */
 .drawer {
   position: fixed;
   top: 0;
@@ -41,6 +49,9 @@
   text-align: left;
 }
 
+/* =========================
+   DRAWER HEADER
+========================= */
 .drawer-header {
   display: flex;
   align-items: center;
@@ -70,6 +81,9 @@
   justify-content: center;
 }
 
+/* =========================
+   POST BUTTON
+========================= */
 .drawer-post {
   display: block;
   text-align: center;
@@ -87,6 +101,9 @@
   background: #6d28d9;
 }
 
+/* =========================
+   STATS
+========================= */
 .drawer-stats {
   display: flex;
   justify-content: space-between;
@@ -115,6 +132,9 @@
   margin-top: 2px;
 }
 
+/* =========================
+   NAV LINKS
+========================= */
 .drawer-nav {
   display: flex;
   flex-direction: column;
@@ -136,6 +156,9 @@
   color: #7c3aed;
 }
 
+/* =========================
+   SIGN OUT
+========================= */
 .drawer-signout {
   display: block;
   text-align: center;
