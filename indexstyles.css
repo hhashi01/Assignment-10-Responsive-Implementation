@@ -246,3 +246,13 @@ body {
 /* Made by Claude and re-worked */
 .cards::-webkit-scrollbar { display: none; }
 .cards { scrollbar-width: none; }
+
+@media (max-width: 600px) {
+  .about {
+    flex-direction: column;
+  }
+
+  .about-photo {
+    min-height: 200px;
+  }
+}

@@ -115,7 +115,6 @@
   gap: 16px;
   overflow-x: auto;
   padding-bottom: 10px;
-  scrollbar-width: none;
 }
 
 /* Review card stays the same, but now works horizontally */
@@ -204,3 +203,6 @@
 /* Made by Claude and re-worked */
 .review-list::-webkit-scrollbar { display: none; }
 .review-list { scrollbar-width: none; }
+
+.account-posts::-webkit-scrollbar { display: none; }
+.account-posts { scrollbar-width: none; }
