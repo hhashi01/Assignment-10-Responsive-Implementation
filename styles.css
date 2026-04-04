@@ -453,6 +453,19 @@ body {
   cursor: pointer;
 }
 
+.search-card,
+.search-card-link {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transform-origin: center center;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.search-card:hover,
+.search-card-link:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
 /* =========================
    SELLER LINK
 ========================= */

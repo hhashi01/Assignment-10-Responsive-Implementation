@@ -41,6 +41,7 @@
 <section class="listings">
   <h2>Items You Might Like</h2>
 
+<div class="cards-wrapper">
   <div class="cards">
 
     <div class="card">
@@ -67,7 +68,7 @@
       </div>
     </div>
 
-      <div class="card">
+    <div class="card">
       <img src="images/bat.jpeg">
       <div class="card-label">
         <h3>Baseball bat</h3>
@@ -83,7 +84,7 @@
       </div>
     </div>
 
-      <div class="card">
+    <div class="card">
       <img src="images/underworld.avif">
       <div class="card-label">
         <h3>1st Edition Underworld Don DeLillo</h3>
@@ -92,6 +93,7 @@
     </div>
 
   </div>
+</div>
 
   <div class="dots">
     <div class="dot active"></div>
@@ -263,6 +265,29 @@
       window.location.href = 'search.html';
     }
   }
+</script>
+
+// Cool card effect
+<script>
+  document.querySelectorAll('.card, .search-card, .search-card-link').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+
+      // Normalize -1 to 1 from center
+      const tiltX = ((y - cy) / cy) * -10;  // up/down tilt
+      const tiltY = ((x - cx) / cx) * 10;   // left/right tilt
+
+      card.style.transform = `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(12px) scale(1.03)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
 </script>
 </body>
 </html>
