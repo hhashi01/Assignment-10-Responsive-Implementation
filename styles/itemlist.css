@@ -199,6 +199,8 @@
   border-radius: 20px;
   padding: 6px 12px;
   gap: 8px;
+
+  position: relative;
 }
 
 .message-bar input {
@@ -214,6 +216,40 @@
   cursor: pointer;
   font-size: 1rem;
   color: #555;
+}
+
+/* =========================
+   Toast notification
+========================= */
+
+.toast {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #333;
+  color:#fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+/* Show the toast */
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, -8px);
+}
+
+/* fade out the toast */
+.toast.fade-out{
+  opacity: 0;
+  transform: translate(-50%, 0);
 }
 
 /* =========================
