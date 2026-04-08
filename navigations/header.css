@@ -11,6 +11,17 @@
   justify-content: space-between;
   padding: 12px 20px;
   border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+}
+
+html.dark .nav {
+  background: #0f0f14;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 .nav-logo {
