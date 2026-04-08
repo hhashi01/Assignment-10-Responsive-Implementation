@@ -9,14 +9,29 @@
 }
 
 /* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadePopIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
    PROFILE
 ========================= */
 .account-profile {
-  background: #ffffff;
-  border: 1px solid #dcdcdc;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
   max-width: 320px;
+  animation: fadePopIn 0.45s ease both;
 }
 
 .account-profile-photo {
@@ -28,11 +43,12 @@
 .account-username {
   font-size: 1.6rem;
   margin-bottom: 6px;
+  color: var(--text);
 }
 
 .account-location {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-muted);
   margin-bottom: 12px;
 }
 
@@ -40,6 +56,7 @@
   font-size: 0.95rem;
   margin-bottom: 16px;
   line-height: 1.4;
+  color: var(--text);
 }
 
 .account-rating {
@@ -53,11 +70,12 @@
 .account-posts {
   max-height: 500px;
   overflow-y: auto;
-  border: 1px solid #dcdcdc;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
-  background: #ffffff;
+  background: var(--card-bg);
   scrollbar-width: none;
+  animation: fadePopIn 0.45s ease 0.1s both;
 }
 
 .account-posts::-webkit-scrollbar {
@@ -67,18 +85,33 @@
 .account-posts h2 {
   margin-bottom: 16px;
   font-size: 1.4rem;
+  color: var(--text);
 }
 
 /* =========================
-   SEARCH CARD
+   SEARCH CARD OVERRIDE
 ========================= */
 .search-card {
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   border-radius: 12px;
   padding: 16px;
-  background: #ffffff;
+  background: var(--card-bg);
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: fadePopIn 0.45s ease both;
+}
+
+.search-card:nth-child(1) { animation-delay: 0.15s; }
+.search-card:nth-child(2) { animation-delay: 0.25s; }
+.search-card:nth-child(3) { animation-delay: 0.35s; }
+.search-card:nth-child(4) { animation-delay: 0.45s; }
+
+.search-card h3 {
+  color: var(--text);
+}
+
+.search-card p {
+  color: var(--text-muted);
 }
 
 .search-card:hover {
@@ -92,21 +125,24 @@
 .account-reviews {
   max-height: 400px;
   overflow-y: auto;
-  border: 1px solid #dcdcdc;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
-  background: #ffffff;
+  background: var(--card-bg);
+  animation: fadePopIn 0.45s ease 0.2s both;
 }
 
 .account-reviews h2 {
   margin-bottom: 16px;
   font-size: 1.4rem;
+  color: var(--text);
 }
 
 .review-list {
   display: flex;
+  flex-direction: column;
   gap: 16px;
-  overflow-x: auto;
+  overflow-y: auto;
   padding-bottom: 10px;
   scrollbar-width: none;
 }
@@ -116,12 +152,17 @@
 }
 
 .review-card {
-  min-width: 200px;
-  background: #ffffff;
-  border: 1px solid #dcdcdc;
+  min-width: unset;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
+  animation: fadePopIn 0.45s ease both;
 }
+
+.review-list .review-card:nth-child(1) { animation-delay: 0.25s; }
+.review-list .review-card:nth-child(2) { animation-delay: 0.35s; }
+.review-list .review-card:nth-child(3) { animation-delay: 0.45s; }
 
 .review-rating {
   font-size: 1.2rem;
@@ -132,6 +173,7 @@
 .review-text {
   font-size: 0.95rem;
   line-height: 1.4;
+  color: var(--text-muted);
 }
 
 /* =========================
