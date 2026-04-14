@@ -74,6 +74,255 @@
   margin-left: 4px;
 }
 
+/* ── Input wrapper (input + icon) ── */
+.field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-wrap input {
+  width: 100%;
+  padding: 11px 42px 11px 12px;
+  border: 1.5px solid var(--border-mid);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: var(--input-bg);
+  color: var(--text);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  outline: none;
+}
+
+/* Extra right-padding when the Show/Hide toggle is present */
+.field-wrap input.has-toggle {
+  padding-right: 88px;
+}
+
+.field-wrap input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+/* Valid state */
+.field-wrap input.field-valid {
+  border-color: #22c55e;
+}
+
+.field-wrap input.field-valid:focus {
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+/* Invalid state */
+.field-wrap input.field-invalid {
+  border-color: #ef4444;
+}
+
+.field-wrap input.field-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* ── Trailing icon ── */
+.field-icon {
+  position: absolute;
+  right: 12px;
+  font-size: 0.85rem;
+  pointer-events: none;
+  font-weight: 700;
+  transition: color 0.18s ease, opacity 0.18s ease;
+  opacity: 0;
+}
+
+.field-icon.icon-success {
+  color: #22c55e;
+  opacity: 1;
+}
+
+.field-icon.icon-error {
+  color: #ef4444;
+  opacity: 1;
+}
+
+/* Push icon left when Show/Hide button is visible */
+.has-toggle ~ .field-icon {
+  right: 58px;
+}
+
+/* ── Show/Hide password toggle ── */
+.toggle-pw {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #7c3aed;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.toggle-pw:hover {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+/* ── Inline error message ── */
+.field-error {
+  font-size: 0.8rem;
+  color: #ef4444;
+  min-height: 1em;
+  display: block;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.field-error.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Password strength meter ── */
+.strength-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.strength-track {
+  flex: 1;
+  height: 5px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 99px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.strength-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  width: 52px;
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+/* ── Required field note ── */
+.required-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: -6px;
+}
+
+/* ── Submit button ── */
+.signup-submit {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.08s ease, box-shadow 0.15s ease;
+  margin-top: 4px;
+}
+
+.signup-submit:hover {
+  background: #6d28d9;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+}
+
+.signup-submit:active {
+  transform: scale(0.97);
+  background: #5b21b6;
+  box-shadow: none;
+}
+
+.signup-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Already have account? ── */
+.login-prompt {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.login-prompt a {
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* ── Success state ── */
+.signup-success {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.success-check {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.signup-success h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.signup-success p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.success-home-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.success-home-btn:hover {
+  background: #6d28d9;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+}
+
 /* ── Responsive ── */
 @media (max-width: 520px) {
   .signup-form {
