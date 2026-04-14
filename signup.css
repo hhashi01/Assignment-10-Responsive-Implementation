@@ -1,0 +1,86 @@
+/* ── Page layout ── */
+.signup-page {
+  min-height: calc(100vh - 60px);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 20px 64px;
+}
+
+.signup-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ── Header copy ── */
+.signup-header {
+  margin-bottom: 28px;
+}
+
+.signup-title {
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.signup-sub {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 4px;
+}
+
+.signup-note {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ── Form card ── */
+.signup-form {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Field group ── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.req-star {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.optional-tag {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .signup-form {
+    padding: 20px 16px;
+  }
+
+  .signup-page {
+    padding: 24px 12px 48px;
+  }
+}
