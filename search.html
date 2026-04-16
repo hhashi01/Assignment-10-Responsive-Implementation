@@ -355,21 +355,19 @@ const suggestions = [
     cards.forEach(card => {
       const title = card.querySelector('h3');
       if (!title) return;
-      const matches = !lower || title.textContent.toLowerCase().includes(lower);
+      const matches = lower && title.textContent.toLowerCase().includes(lower);
       card.style.display = matches ? '' : 'none';
       if (matches) visibleCount++;
     });
 
-    noResults.style.display = visibleCount === 0 && lower ? 'block' : 'none';
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
   }
 
   // --- Pre-fill from URL on page load ---
   const params = new URLSearchParams(window.location.search);
   const initialQuery = params.get('q') || '';
-  if (initialQuery) {
-    searchInput.value = initialQuery;
-    filterCards(initialQuery);
-  }
+  searchInput.value = initialQuery;
+  filterCards(initialQuery);
 </script>
 
 <!-- Cool card effect - Zach (duplicated from index, but scaled down
