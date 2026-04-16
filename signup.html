@@ -22,12 +22,12 @@
       </div>
 
       <!-- ── SIGN-UP FORM ── -->
-      <form id="signupForm" class="signup-form" autocomplete="on">
+      <form id="signupForm" class="signup-form" novalidate autocomplete="on">
 
         <!-- Full Name -->
         <div class="field-group" id="group-name">
           <label class="field-label" for="name">
-            Full Name <span class="req-star" >*</span>
+            Full Name <span class="req-star" aria-hidden="true">*</span>
           </label>
           <div class="field-wrap">
             <input
@@ -36,16 +36,18 @@
               name="name"
               autocomplete="name"
               placeholder="Jane Smith"
+              aria-required="true"
+              aria-describedby="name-error"
             />
-            <span class="field-icon" ></span>
+            <span class="field-icon" aria-hidden="true"></span>
           </div>
-          <small class="field-error" id="name-error" role="alert" ></small>
+          <small class="field-error" id="name-error" role="alert" aria-live="polite"></small>
         </div>
 
         <!-- Email -->
         <div class="field-group" id="group-email">
           <label class="field-label" for="email">
-            Email Address <span class="req-star">*</span>
+            Email Address <span class="req-star" aria-hidden="true">*</span>
           </label>
           <div class="field-wrap">
             <input
@@ -54,16 +56,37 @@
               name="email"
               autocomplete="email"
               placeholder="jane@example.com"
+              aria-required="true"
+              aria-describedby="email-error"
             />
-            <span class="field-icon"></span>
+            <span class="field-icon" aria-hidden="true"></span>
           </div>
-          <small class="field-error" id="email-error" role="alert"></small>
+          <small class="field-error" id="email-error" role="alert" aria-live="polite"></small>
+        </div>
+
+        <!-- Phone (optional) -->
+        <div class="field-group" id="group-phone">
+          <label class="field-label" for="phone">
+            Phone Number <span class="optional-tag">(optional)</span>
+          </label>
+          <div class="field-wrap">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="(555) 000-0000"
+              aria-describedby="phone-error"
+            />
+            <span class="field-icon" aria-hidden="true"></span>
+          </div>
+          <small class="field-error" id="phone-error" role="alert" aria-live="polite"></small>
         </div>
 
         <!-- Password -->
         <div class="field-group" id="group-password">
           <label class="field-label" for="password">
-            Password <span class="req-star">*</span>
+            Password <span class="req-star" aria-hidden="true">*</span>
           </label>
           <div class="field-wrap">
             <input
@@ -72,13 +95,16 @@
               name="password"
               autocomplete="new-password"
               placeholder="Create a strong password"
+              aria-required="true"
+              aria-describedby="password-error password-strength-label"
             />
             <button
               type="button"
               class="toggle-pw"
               data-target="password"
+              aria-label="Show password"
             >Show</button>
-            <span class="field-icon"></span>
+            <span class="field-icon" aria-hidden="true"></span>
           </div>
 
           <!-- Strength meter -->
@@ -86,16 +112,16 @@
             <div class="strength-track">
               <div class="strength-fill" id="strength-fill"></div>
             </div>
-            <span class="strength-text" id="strength-text" id="password-strength-label"></span>
+            <span class="strength-text" id="strength-text" id="password-strength-label" aria-live="polite"></span>
           </div>
 
-          <small class="field-error" id="password-error" role="alert"></small>
+          <small class="field-error" id="password-error" role="alert" aria-live="polite"></small>
         </div>
 
         <!-- Confirm Password -->
         <div class="field-group" id="group-confirm">
           <label class="field-label" for="confirm">
-            Confirm Password <span class="req-star">*</span>
+            Confirm Password <span class="req-star" aria-hidden="true">*</span>
           </label>
           <div class="field-wrap">
             <input
@@ -104,15 +130,18 @@
               name="confirm"
               autocomplete="new-password"
               placeholder="Repeat your password"
+              aria-required="true"
+              aria-describedby="confirm-error"
             />
             <button
               type="button"
               class="toggle-pw"
               data-target="confirm"
+              aria-label="Show confirm password"
             >Show</button>
-            <span class="field-icon"></span>
+            <span class="field-icon" aria-hidden="true"></span>
           </div>
-          <small class="field-error" id="confirm-error" role="alert"></small>
+          <small class="field-error" id="confirm-error" role="alert" aria-live="polite"></small>
         </div>
 
         <!-- Required field note -->
@@ -122,11 +151,15 @@
           Create Account
         </button>
 
+        <p class="login-prompt">
+          Already have an account? <a href="login.html">Log in</a>
+        </p>
+
       </form>
 
       <!-- ── SUCCESS STATE ── -->
       <div class="signup-success" id="signup-success" hidden>
-        <div class="success-check">✓</div>
+        <div class="success-check" aria-hidden="true">✓</div>
         <h2>You're all set!</h2>
         <p>Your Craigslist account has been created. Welcome aboard.</p>
         <a href="index.html" class="success-home-btn">Go to Homepage</a>
