@@ -3,7 +3,7 @@
   successfully. Other scripts can read this flag to conditionally
   show login/logout UI, redirect, etc.*/
 
-window.accountCreated = false;
+window.accountCreated = sessionStorage.getItem("accountCreated") === "true";
 
 /* --------------------------------------------------------------------------
    NAV BUTTON — swap "Sign Up" ↔ "Your Account"
@@ -15,46 +15,6 @@ window.accountCreated = false;
    runs automatically on every page once header_footer.js injects the nav.
    It also gets called directly after a successful sign-up (same session).
    -------------------------------------------------------------------------- */
-
-function updateNavAccountBtn() {
-  const btn = document.getElementById("nav-account-btn");
-  if (!btn) return;
-
-  if (window.accountCreated) {
-    btn.href      = "user_account.html";
-    btn.innerHTML = "<b>Your Account</b>";
-    btn.setAttribute("aria-label", "Go to your account");
-  } else {
-    btn.href      = "signup.html";
-    btn.innerHTML = "<b>Sign Up</b>";
-    btn.setAttribute("aria-label", "Sign up for an account");
-  }
-}
-
-function watchForNav() {
-  const placeholder = document.getElementById("nav-placeholder");
-  if (!placeholder) return;
-
-  if (document.getElementById("nav-account-btn")) {
-    updateNavAccountBtn();
-    return;
-  }
-
-  const observer = new MutationObserver(() => {
-    if (document.getElementById("nav-account-btn")) {
-      updateNavAccountBtn();
-      observer.disconnect();
-    }
-  });
-
-  observer.observe(placeholder, { childList: true, subtree: true });
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", watchForNav);
-} else {
-  watchForNav();
-}
 
 /* Validation: each entry maps a field id → { validate(value) → string | null }
    Returning a string means invalid; null means valid. */
@@ -317,6 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // All good? Success!
     window.accountCreated = true;
+    sessionStorage.setItem("accountCreated", "true");
 
     // Update the nav button immediately in the same session.
     updateNavAccountBtn();
