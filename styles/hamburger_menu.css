@@ -173,3 +173,196 @@
 .drawer-signout:hover {
   color: #e11d48;
 }
+
+
+/* =========================
+   OVERLAY
+========================= */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* =========================
+   DRAWER
+========================= */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  gap: 16px;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+  transition: right 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-y: auto;
+}
+
+.drawer.active {
+  right: 0;
+}
+
+html.dark .drawer {
+  background: #1a1625;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   DRAWER BACK BUTTON
+========================= */
+.drawer-back {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text);
+  padding: 0;
+  line-height: 1;
+}
+
+.drawer-back:hover {
+  color: #7c3aed;
+}
+
+/* =========================
+   DRAWER HEADER
+========================= */
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.drawer-greeting {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.drawer-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.drawer-header h3 {
+  font-size: 15px;
+  font-weight: normal;
+  color: var(--text-secondary);
+}
+
+.drawer-avatar {
+  font-size: 42px;
+  text-decoration: none;
+  line-height: 1;
+  color: var(--text);
+}
+
+.drawer-avatar:hover {
+  color: #7c3aed;
+}
+
+/* =========================
+   DRAWER POST BUTTON
+========================= */
+.drawer-post {
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.drawer-post:hover {
+  background: #6d28d9;
+}
+
+/* =========================
+   DRAWER STATS
+========================= */
+.drawer-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.drawer-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.drawer-stat-num {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.drawer-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   DRAWER NAV
+========================= */
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* =========================
+   DRAWER SIGN OUT
+========================= */
+.drawer-signout {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.drawer-signout:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+html.dark .drawer-signout:hover {
+  background: rgba(220, 38, 38, 0.12);
+}
+
+/* =========================
+   HAMBURGER DARK MODE
+========================= */
+html.dark .nav-menu span {
+  background: #e8e8e8;
+}
