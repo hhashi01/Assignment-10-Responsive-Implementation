@@ -22,7 +22,7 @@
 }
 
 .breadcrumb a {
-  color: #333;
+  color: #7c3aed;
   text-decoration: none;
 }
 
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f5f5;
+  background: var(--bg-secondary);
   border-radius: 10px;
   overflow: hidden;
   min-height: 280px;
@@ -59,13 +59,14 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: white;
-  border: 1px solid #ccc;
+  background: var(--card-bg);
+  border: 1px solid var(--border-mid);
   border-radius: 50%;
   width: 36px;
   height: 36px;
   cursor: pointer;
   font-size: 1rem;
+  color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,11 +89,11 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #ccc;
+  background: var(--border-mid);
 }
 
 .dot.active {
-  background: #333;
+  background: var(--text);
 }
 
 /* =========================
@@ -109,22 +110,26 @@
 
 .item-title-row h2 {
   font-size: 1.3rem;
+  color: var(--text);
 }
 
 .item-listed {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--text-light);
+  white-space: nowrap;
 }
 
 .item-price {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 12px;
+  color: var(--text);
 }
 
 .item-info p {
   margin-bottom: 6px;
   font-size: 0.95rem;
+  color: var(--text);
 }
 
 /* =========================
@@ -134,7 +139,7 @@
   margin: 14px 0 6px;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
 }
 
 .item-map img {
@@ -145,7 +150,7 @@
 
 .item-location {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-muted);
   margin-bottom: 16px;
 }
 
@@ -153,9 +158,10 @@
    SELLER CARD
 ========================= */
 .seller-card {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px;
+  background: var(--card-bg);
 }
 
 .seller-info {
@@ -170,12 +176,13 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  background: #eee;
+  background: var(--bg-secondary);
 }
 
 .seller-name {
   font-weight: 600;
   margin-bottom: 2px;
+  color: var(--text);
 }
 
 .seller-rating {
@@ -183,10 +190,12 @@
   align-items: center;
   gap: 6px;
   font-size: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .review-count {
-  color: #666;
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
 
 /* =========================
@@ -195,11 +204,11 @@
 .message-bar {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-mid);
   border-radius: 20px;
   padding: 6px 12px;
   gap: 8px;
-
+  background: var(--input-bg);
   position: relative;
 }
 
@@ -208,6 +217,12 @@
   border: none;
   outline: none;
   font-size: 0.9rem;
+  background: transparent;
+  color: var(--text);
+}
+
+.message-bar input::placeholder {
+  color: var(--text-light);
 }
 
 .send-btn {
@@ -215,21 +230,24 @@
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  color: #555;
+  color: var(--text-muted);
+}
+
+.send-btn:hover {
+  color: #7c3aed;
 }
 
 /* =========================
-   Toast notification
+   TOAST NOTIFICATION
 ========================= */
-
 .toast {
   position: absolute;
   bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
 
-  background: #333;
-  color:#fff;
+  background: var(--text);
+  color: var(--bg);
   padding: 8px 14px;
   border-radius: 6px;
   font-size: 0.85rem;
@@ -238,16 +256,15 @@
   pointer-events: none;
 
   transition: opacity 0.4s ease, transform 0.4s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-/* Show the toast */
+
 .toast.show {
   opacity: 1;
   transform: translate(-50%, -8px);
 }
 
-/* fade out the toast */
-.toast.fade-out{
+.toast.fade-out {
   opacity: 0;
   transform: translate(-50%, 0);
 }
@@ -255,6 +272,31 @@
 /* =========================
    RESPONSIVE
 ========================= */
+@media (max-width: 480px) {
+  .item-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .item-listed {
+    font-size: 0.8rem;
+    white-space: normal;
+  }
+
+  .item-location {
+    font-size: 0.85rem;
+  }
+
+  .seller-rating {
+    font-size: 0.85rem;
+  }
+
+  .review-count {
+    font-size: 0.8rem;
+  }
+}
+
 @media (min-width: 768px) {
   .item-detail-layout {
     flex-direction: row;
