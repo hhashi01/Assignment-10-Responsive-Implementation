@@ -346,22 +346,42 @@ const suggestions = [
   });
 
   // --- Card filtering ---
-  function filterCards(query) {
-    const cards = document.querySelectorAll('.search-card, .search-card-link');
-    const noResults = document.getElementById('noResults');
-    const lower = query.toLowerCase();
-    let visibleCount = 0;
+      function filterCards(query) {
+  const cards = document.querySelectorAll('.search-card, .search-card-link');
+  const noResults = document.getElementById('noResults');
 
-    cards.forEach(card => {
-      const title = card.querySelector('h3');
-      if (!title) return;
-      const matches = lower && title.textContent.toLowerCase().includes(lower);
-      card.style.display = matches ? '' : 'none';
-      if (matches) visibleCount++;
-    });
+  const minPrice = document.querySelector('input[placeholder="Min"]').value;
+  const maxPrice = document.querySelector('input[placeholder="Max"]').value;
 
-    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-  }
+  const lower = query.toLowerCase();
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const priceText = card.querySelector('.search-price').textContent.replace(/[^0-9]/g, '');
+    const price = parseInt(priceText);
+
+    let matches = true;
+
+    // keyword
+    if (lower && !title.includes(lower)) matches = false;
+
+    // price
+    if (minPrice && price < parseInt(minPrice)) matches = false;
+    if (maxPrice && price > parseInt(maxPrice)) matches = false;
+
+    card.style.display = matches ? '' : 'none';
+
+    if (matches) visibleCount++;
+  });
+
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+}
+document.querySelector('.search-apply-btn').addEventListener('click', () => {
+  const query = document.getElementById('searchInput').value.trim();
+  filterCards(query);
+});
+  
 
   // --- Pre-fill from URL on page load ---
   const params = new URLSearchParams(window.location.search);
